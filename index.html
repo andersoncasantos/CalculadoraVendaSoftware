@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Mensalidade</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+    <div class="alert-error">
+        Digite somente números
+    </div>
+
+    <div class="container">
+        <main class="card">
+            <form>
+                <h1 class="title">Calculadora de Venda de Software</h1>
+                <div class="input-wrapper">
+                    <label for="wage">Salário Mínimo Atual (R$)</label>
+                    <input 
+                        id="wage" 
+                        type="text"
+                        placeholder="1320" />
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="percentage">Percentual Sobre o Salário (%)</label>
+                    <input 
+                        id="percentage" 
+                        type="text"
+                        placeholder="14" />
+                </div>
+
+                <button type="submit">
+                    Calcular Valor
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <div class="modal-wrapper open">
+        <div class="modal card">
+            <h2 class="title">
+
+                <button class="close">
+                    <img src="./assets/close.svg" alt="icone para fechar o popup">
+                </button>
+
+                <span>O valor do software é de 184</span>
+
+            </h2>
+        </div>
+    </div>
+    
+</body>
+</html>
