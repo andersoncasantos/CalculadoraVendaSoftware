@@ -6,6 +6,9 @@ const form = document.querySelector('form');
 const inputWage = document.querySelector('#wage');
 const inputPercentage = document.querySelector('#percentage');
 
+inputWage.oninput = () => AlertError.close();
+inputPercentage.oninput = () => AlertError.close();
+
 form.onsubmit = event => {
     event.preventDefault();
 
