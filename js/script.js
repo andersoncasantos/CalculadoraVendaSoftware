@@ -1,5 +1,6 @@
 import { Modal } from './modal.js';
 import { AlertError } from './alert-error.js'
+import { CalcSoftware, notANumber } from './utils.js';
 
 const form = document.querySelector('form');
 const inputWage = document.querySelector('#wage');
@@ -24,12 +25,4 @@ form.onsubmit = event => {
     const message = `O valor do software é R$ ${result.toFixed(2)}`;
     Modal.message.innerText = message;
     Modal.open();
-}
-
-function notANumber(value){
-    return isNaN(value) || value == "";
-}
-
-function CalcSoftware(wage, percentage){
-    return wage * (percentage / 100).toFixed(2);
 }
