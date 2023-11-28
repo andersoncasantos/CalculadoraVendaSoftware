@@ -1,6 +1,6 @@
 import { Modal } from './modal.js';
 import { AlertError } from './alert-error.js'
-import { CalcSoftware, notANumber } from './utils.js';
+import { calculateValueSoftware, notANumber } from './utils.js';
 
 const form = document.querySelector('form');
 const inputWage = document.querySelector('#wage');
@@ -12,16 +12,21 @@ form.onsubmit = event => {
     const wage = inputWage.value;
     const percentage = inputPercentage.value;
 
-    const showAlertError = notANumber(wage) || notANumber(percentage);
+    const wageOrPercentageNotNumber = notANumber(wage) || notANumber(percentage);
 
-    if(showAlertError){
+    if(wageOrPercentageNotNumber){
         AlertError.open();
         return;
     }
 
     AlertError.close();
 
-    const result = CalcSoftware(wage, percentage);
+    const result = calculateValueSoftware(wage, percentage);
+    displayResultMessage(result);
+
+}
+
+function displayResultMessage(result){
     const message = `O valor do software é R$ ${result.toFixed(2)}`;
     Modal.message.innerText = message;
     Modal.open();
