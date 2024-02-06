@@ -12,12 +12,12 @@ inputPercentage.oninput = () => AlertError.close();
 form.onsubmit = event => {
     event.preventDefault();
 
-    const wage = inputWage.value;
-    const percentage = inputPercentage.value;
+    const wage = parseFloat(inputWage.value);
+    const percentage = parseFloat(inputPercentage.value);
 
     const wageOrPercentageNotNumber = notANumber(wage) || notANumber(percentage);
 
-    if(wageOrPercentageNotNumber){
+    if (wageOrPercentageNotNumber) {
         AlertError.open();
         return;
     }
@@ -29,8 +29,8 @@ form.onsubmit = event => {
 
 }
 
-function displayResultMessage(result){
-    const message = `O valor do software é R$ ${result.toFixed(2)}`;
+function displayResultMessage(result) {
+    const message = `O valor do software é R$ ${result.toFixed(2).toString().replace(".", ",")}`;
     Modal.message.innerText = message;
     Modal.open();
 }
